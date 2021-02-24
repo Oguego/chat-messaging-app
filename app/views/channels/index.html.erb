@@ -1,0 +1,28 @@
+
+<div style="text-align: center;"><h1>Welcome General Chat</h1></div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-12 col-md-8">
+
+      <div class="card card-fluid">
+        <h6 class="card-header">
+          Chat Messages
+        </h6>
+
+        <div class="card-body" >
+
+
+        <ul id="msg">
+          <%= render @channel.messages %>
+        </ul>
+
+          <%= render 'messages/form', channel: @channel, message: @channel.build_message %>
+
+
+        </div>
+
+      </div>
+
+   </div>
+</div>
+<br>

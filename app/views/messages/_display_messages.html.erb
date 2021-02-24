@@ -1,0 +1,21 @@
+<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>Content</th>
+    <th>Sent Date</th>
+    <th>User</th>
+    <th>Channel </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% messages.each do |message| %>
+    <tr>
+      <td><%= message.content %></td>
+      <td><%= message.sent_date %></td>
+      <td><%= message.user_id %></td>
+      <td><%= message.channel_id %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

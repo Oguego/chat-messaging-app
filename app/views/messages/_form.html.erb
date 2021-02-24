@@ -1,0 +1,31 @@
+<br>
+<br>
+    <%= form_for(message, url: channel_messages_path(channel) ) do |f| %>
+
+          <% if message.errors.any? %>
+            <div class="alert alert-danger" role="alert">
+              <ul>
+                <% message.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group row">
+            <%= f.label :enter_message, class: 'col-form-label col-sm-12 col-md-4' %>
+            <div class="col-sm-12 col-md-8">
+              <%= f.text_field :content, cols: "15", rows: "5", class: " form-control ", autofocus: true %>  <%= f.submit 'Send', class: 'btn btn-primary btn-sm float-right' %>
+
+            </div>
+          </div>
+
+<!--        <div class="card-footer text-right">-->
+          <%#= f.submit 'Send', class: 'btn btn-primary btn-sm' %>
+<!--        </div>-->
+
+    <% end %>
+  </div>
+</div>
+
+<%= "<div> <br> </div>".html_safe %>

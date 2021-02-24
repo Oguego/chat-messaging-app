@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+    <body>
+        <p>
+          <%= pluralize(@count_by_week, 'message')%> have been exchanged in the last week.
+        </p>
+
+        <%if @total_messages > 0 %>
+            <p>
+              <%= @total_messages %> since your last message on the <%= @message.created_at.strftime("%d of %B")%>
+            </p>
+        <%end %>
+         <p>Thank you and have a great day!</p>
+
+    </body>
+</html>
