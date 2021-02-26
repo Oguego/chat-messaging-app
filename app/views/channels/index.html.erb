@@ -1,28 +1,38 @@
 
-<div style="text-align: center;"><h1>Welcome General Chat</h1></div>
+<!--<div style="text-align: center;"><h1>Welcome General Chat</h1></div>-->
 
-<div class="row justify-content-center">
-  <div class="col-sm-12 col-md-8">
+<!--<div class="row justify-content-center">-->
+<!--  <div class="col-sm-12 col-md-8">-->
 
-      <div class="card card-fluid">
-        <h6 class="card-header">
-          Chat Messages
-        </h6>
+<!--      <div class="card card-fluid">-->
+<!--        <h6 class="card-header">-->
+<!--          Chat Messages | <span class="text-right"> <%#= @channel.user_channels.size  %> Members in this chat</span>-->
+<!--          <p style="text-align: left; width:49%; display: inline-block;"> Chat Messages </p>-->
+<!--           <p style="text-align: right; width:50%; display: inline-block;"> <span class="badge badge-pill badge-info"> <%#= @channel.user_channels.size  %> Members in this chat</span> </p>-->
+<!--        </h6>-->
 
-        <div class="card-body" >
+<!--        <div class="card-body" >-->
+
+<!--        <div id="msg">-->
+          <%#  @channel.messages.each do |message| %>
+            <%# if current_user.id == message.user_id %>
+<!--              <p class="text-right alert alert-primary" role="alert"> <%#= message.content + ' - ' + message.user.name %>  </p>-->
+            <%#else %>
+<!--              <p class="text-left alert alert-success" role="alert"> <%#= message.content + ' - ' + message.user.name %>  </p>-->
+            <%#end %>
+
+          <%#end %>
+<!--        </div>-->
+<!--        </div>-->
+
+<!--        <div class="card-footer" >-->
+          <%#= render 'messages/form', channel: @channel, message: @channel.build_message %>
+<!--        </div>-->
 
 
-        <ul id="msg">
-          <%= render @channel.messages %>
-        </ul>
 
-          <%= render 'messages/form', channel: @channel, message: @channel.build_message %>
+<!--      </div>-->
 
-
-        </div>
-
-      </div>
-
-   </div>
-</div>
-<br>
+<!--   </div>-->
+<!--</div>-->
+<!--<br>-->

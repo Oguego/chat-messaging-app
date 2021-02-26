@@ -1,18 +1,19 @@
 class ChannelsController < ApplicationController
   before_action :set_channel, only: %i[ show edit update destroy ]
+  layout 'chat_layout'
 
   # GET /channels or /channels.json
   def index
-    # @channels = Channel.all
-    @channel = Channel.find_or_create_by(name: 'General')
-    current_user.join_channel(@channel)
-    render layout: 'chat_layout'
+    @channels = Channel.all
+    # @channel = Channel.find_or_create_by(name: 'General')
+    # current_user.join_channel(@channel)
+    # render layout: 'chat_layout'
   end
 
   # GET /channels/1 or /channels/1.json
   def show
-    # @channels = Channel.all
-    # render 'index'
+    @channel = Channel.find(params[:id])
+    current_user.join_channel(@channel)
   end
 
   # GET /channels/new

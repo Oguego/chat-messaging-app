@@ -25,11 +25,11 @@ class MessagesController < ApplicationController
     @message = @channel.messages.new(message_params)
 
     @message.user = current_user
-
     respond_to do |format|
       if @message.save
-        ActionCable.server.broadcast "room_channel", content: @message.content
-        format.html { redirect_to channels_path, notice: "Message was successfully created." }
+        data = {user: @message.user, message: @message, channel: @channel, user_id: current_user.id}
+        ActionCable.server.broadcast "room_channel", data
+        format.html { redirect_to @channel, notice: "Message was successfully created." }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }

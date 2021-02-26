@@ -1,6 +1,4 @@
-<br>
-<br>
-    <%= form_for(message, url: channel_messages_path(channel) ) do |f| %>
+ <%= form_for(message, url: channel_messages_path(channel) ) do |f| %>
 
           <% if message.errors.any? %>
             <div class="alert alert-danger" role="alert">
@@ -13,17 +11,12 @@
           <% end %>
 
           <div class="form-group row">
-            <%= f.label :enter_message, class: 'col-form-label col-sm-12 col-md-4' %>
-            <div class="col-sm-12 col-md-8">
-              <%= f.text_field :content, cols: "15", rows: "5", class: " form-control ", autofocus: true %>  <%= f.submit 'Send', class: 'btn btn-primary btn-sm float-right' %>
-
+            <%= f.label :type_message, class: 'col-form-label col-sm-12 col-md-3' %>
+            <div class="col-sm-12 col-md-7">
+              <%= f.text_field :content, cols: "15", rows: "5", class: " form-control ", autofocus: true %>
             </div>
+              <%= f.submit 'Send', class: 'btn btn-primary btn-sm float-right col-sm-12 col-md-2' %>
           </div>
-
-<!--        <div class="card-footer text-right">-->
-          <%#= f.submit 'Send', class: 'btn btn-primary btn-sm' %>
-<!--        </div>-->
-
     <% end %>
   </div>
 </div>

@@ -12,8 +12,13 @@ consumer.subscriptions.create("RoomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    console.log("Recieving:")
-    console.log(data.content)
-    $('#msg').append('<li class="message"> ' + data.content + '</li>')
+    // console.log("Receiving:")
+    // console.log(data)
+
+    if (data.user.id === data.user_id){
+      $(`#channel-${data.channel.id}`).append('<p class="text-right alert alert-primary"role = "alert">' + data.message.content + ' - ' +  data.user.name + '</p>')
+    } else {
+      $(`#channel-${data.channel.id}`).append('<p class="text-right alert alert-success"role = "alert">' + data.message.content + ' - ' +  data.user.name + '</p>')
+    }
   }
 });

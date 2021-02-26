@@ -1,9 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div style="text-align: center;"><h1>Welcome <%= @channel.name %> Chat</h1></div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @channel.name %>
-</p>
+<div class="row justify-content-center">
+  <div class="col-sm-12 col-md-8">
 
-<%= link_to 'Edit', edit_channel_path(@channel) %> |
-<%= link_to 'Back', channels_path %>
+    <div class="card card-fluid">
+      <h6 class="card-header">
+        <p style="text-align: left; width:49%; display: inline-block;"> Chat Messages </p>
+        <p style="text-align: right; width:50%; display: inline-block;"> <span class="badge badge-pill badge-info"> <%= @channel.user_channels.size  %> Members in this chat</span> </p>
+      </h6>
+
+      <div class="card-body" >
+          <div id="channel-<%= @channel.id %>">
+              <%= render @channel.messages %>
+          </div>
+      </div>
+
+      <div class="card-footer" >
+        <%= render 'messages/form', channel: @channel, message: @channel.build_message %>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
+<br>

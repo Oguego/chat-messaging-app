@@ -1,0 +1,22 @@
+<hr>
+<h5> Channels </h5>
+<br>
+
+
+<div class="list-group">
+
+  <%#= link_to 'General Chat', channels_path, class: "list-group-item list-group-item-action active"%>
+
+    <% channels.each do |channel| %>
+
+    <%= link_to channel.name, channel, class: "list-group-item list-group-item-action active"%>
+<br>
+    <%end %>
+  <!--              <br>-->
+  <%#= link_to 'Private Chat', "#", class: "list-group-item list-group-item-action active"%>
+  <!--              <br>-->
+  <%#= link_to 'Social Chat', "#", class: "list-group-item list-group-item-action active"%>
+
+
+</div>
+<hr>

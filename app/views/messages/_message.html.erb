@@ -1,3 +1,11 @@
-<li id="<%=message.id%>">
-  <bold><%= message.content %></bold> - <small><i><%= message.user.name %></i></small>
-</li>
+<div id="<%=message.id%>">
+
+  <% if current_user == message.user  %>
+    <p class="text-right alert alert-primary" role="alert"> <%= message.content %>  - <small><i><%= message.user.name %></small></i>  </p>
+  <%else %>
+    <p class="text-left alert alert-success" role="alert"> <%= message.content %> - <small><i><%= message.user.name %></small></i>  </p>
+  <%end %>
+
+
+<!--  <bold><%#= message.content %></bold> - <small><i><%#= message.user.name %></i></small>-->
+</div>
